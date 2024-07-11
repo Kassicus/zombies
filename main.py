@@ -2,6 +2,7 @@ import pygame
 
 import lib
 import debug
+import world
 
 pygame.init()
 
@@ -15,6 +16,7 @@ class Game():
         lib.events = pygame.event.get()
 
         self.debug_interface = debug.DebugInterface()
+        self.world = world.World("assets/test.jpg")
 
     def start(self) -> None:
         while self.running:
@@ -38,11 +40,13 @@ class Game():
     def draw(self) -> None:
         self.screen.fill(lib.color.black)
 
+        self.world.draw()
+
         if self.debug_interface.active:
             self.debug_interface.draw()
 
     def update(self) -> None:
-
+        self.world.update()
         self.debug_interface.update(self.clock)         
         pygame.display.update()
         lib.delta_time = self.clock.tick(lib.fps_limit) / 1000
