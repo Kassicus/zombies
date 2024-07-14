@@ -42,5 +42,6 @@ fps_limit = 120
 
 events = None
 world_reference = None
+player_reference = None
 
 global_offset = pygame.math.Vector2()

@@ -13,7 +13,10 @@ class World():
         self.world_background = pygame.image.load(background_path).convert_alpha()
         
         self.world_camera = camera.PlayerCenterCamera(self.world_background)
+        self.zombies = pygame.sprite.Group()
+        
         self.player = player.Player()
+        lib.player_reference = self.player
 
         self.world_camera.add(self.player)
 
