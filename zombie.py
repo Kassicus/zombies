@@ -10,7 +10,7 @@ class BaseZombie(pygame.sprite.Sprite):
         self.pos = pygame.math.Vector2(x, y)
         self.vel = pygame.math.Vector2()
         self.speed = 100
-        self.size = 40
+        self.size = lib.block_size
 
         self.health = 5
 

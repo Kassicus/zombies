@@ -39,6 +39,7 @@ color = Color()
 
 delta_time = 0
 fps_limit = 120
+block_size = 40
 
 events = None
 world_reference = None

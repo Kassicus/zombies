@@ -1,17 +1,15 @@
 import pygame
+
 import lib
 
 class Player(pygame.sprite.Sprite):
     def __init__(self) -> None:
-        """
-        Initializes a new instance of the Player class.
-        """
         pygame.sprite.Sprite.__init__(self)
 
         self.pos = pygame.math.Vector2(int(lib.SCREEN_WIDTH / 2), int(lib.SCREEN_HEIGHT / 2))
         self.vel = pygame.math.Vector2()
         self.speed = 250
-        self.size = 40
+        self.size = lib.block_size
 
         self.health = 5
         self.max_health = 15
